@@ -1,0 +1,50 @@
+<svg width="300" height="300" viewBox="-50 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flame Animation -->
+  <defs>
+    <path id="flamePath" d="M75 200 Q100 160 125 200 Q100 240 75 200" fill="none"/>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="#FFEB3B"/>
+  
+  <!-- Minion Body -->
+  <rect x="50" y="50" width="100" height="100" rx="20" fill="#FFEB3B" stroke="#000" stroke-width="5">
+    <animateMotion dur="5s" repeatCount="indefinite">
+      <mpath href="#flamePath"/>
+    </animateMotion>
+  </rect>
+  
+  <!-- Minion Goggles -->
+  <circle cx="75" cy="85" r="20" fill="#FFF" stroke="#000" stroke-width="5">
+    <animate attributeName="r" values="20;22;20" dur="1s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="125" cy="85" r="20" fill="#FFF" stroke="#000" stroke-width="5">
+    <animate attributeName="r" values="20;22;20" dur="1s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  
+  <!-- Minion Eyes -->
+  <circle cx="75" cy="85" r="12" fill="#000">
+    <animate attributeName="r" values="12;0;12" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="125" cy="85" r="12" fill="#000">
+    <animate attributeName="r" values="12;0;12" dur="1.5s" repeatCount="indefinite" begin="0.25s"/>
+  </circle>
+  
+  <!-- Minion Mouth -->
+  <path id="mouth" d="M70 125 Q100 140 130 125" stroke="#000" stroke-width="5" fill="none">
+    <animate attributeName="d" values="M70 125 Q100 140 130 125; M70 130 Q100 150 130 130; M70 125 Q100 140 130 125" dur="2s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Blink Animation -->
+  <circle cx="75" cy="85" r="0" fill="#000" opacity="0">
+    <animate attributeName="r" values="0;12;0" dur="1s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="125" cy="85" r="0" fill="#000" opacity="0">
+    <animate attributeName="r" values="0;12;0" dur="1s" repeatCount="indefinite" begin="0.5s"/>
+    <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  
+  <!-- Flame -->
+  <path d="M100 200 Q115 180 130 200 Q115 220 100 200" fill="orange">
+    <animate attributeName="d" values="M100 200 Q115 180 130 200 Q115 220 100 200; M100 210 Q115 190 130 210 Q115 230 100 210; M100 200 Q115 180 130 200 Q115 220 100 200" dur="1s" repeatCount="indefinite"/>
+  </path>
+</svg>

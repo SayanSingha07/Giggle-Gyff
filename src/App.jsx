@@ -1,53 +1,49 @@
-import React from 'react'
-import './App.css'
-import { RouterProvider,createBrowserRouter } from 'react-router-dom'
-import AppLayout from './layout/app-layout'
-import Home from './pages/Home'
-import CatagoryPage from './pages/CatagoryPage'
-import SearchPage from './pages/SearchPage'
-import FavourateGifPage from './pages/FavourateGifPage'
-import Gifpage from './pages/Single-gifpage'
+import React from "react";
+import "./App.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import AppLayout from "./layout/app-layout";
+import Home from "./pages/Home";
+import CatagoryPage from "./pages/CatagoryPage";
+import SearchPage from "./pages/SearchPage";
+import FavourateGifPage from "./pages/FavourateGifPage";
 
+import DataProvider from "./context/context";
+import SingleGifPage from "./pages/Single-gifpage"
 
-
-const router=createBrowserRouter([
+const router = createBrowserRouter([
   {
-    element:<AppLayout  />,
-    children:[
+    element: <AppLayout />,
+    children: [
       {
-        path:"/",
-        element:<Home />
+        path: "/",
+        element: <Home />,
       },
       {
-        path:"/:category",
-        element:<CatagoryPage />
+        path: "/:category",
+        element: <CatagoryPage />,
       },
       {
-        path:"/search/:query",
-        element:<SearchPage />
+        path: "/search/:query",
+        element: <SearchPage />,
       },
       {
-        path:"/:type/:slug",
-        element:< Gifpage/>
+        path: "/:type/:slug",
+        element: <SingleGifPage/>
       },
       {
-        path:"/Favourate",
-        element:<FavourateGifPage />
-      }
-    ]
-  }
-])
+        path: "/Favourate",
+        element: <FavourateGifPage />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  
-
   return (
-   
- <>
-<RouterProvider router={router}/>
-<h1>sayan</h1>
- </>
-  )
+    <DataProvider>
+      <RouterProvider router={router} />
+    </DataProvider>
+  );
 }
 
-export default App
+export default App;
